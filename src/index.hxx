@@ -9,10 +9,10 @@
 class Index
 {
 public:
-    /// Board positions will use 'int' coordinates.
+    // Board positions will use 'int' coordinates.
     using Position = ge211::Posn<int>;
 
-    /// Default constructor
+    // Default constructor
     explicit Index(Position position = {0,0});
 
     void set_posn(Position);

@@ -16,15 +16,15 @@ View::View(Model const& model)
                         Color::from_rgba(0.5, 0, 1, 1)),
           red_sprite({grid_size, grid_size}, Color::from_rgba(1, 0, 0,
                                                               1)),
-          vert_sprite({1, grid_size}, Color::from_rgba(0.5,0.5,0.5,1)),
-          horiz_sprite({grid_size, 1}, Color::from_rgba(0.5,0.5,0.5,1))
+          vert_sprite({1, grid_size}, Color::from_rgba(0.5, 0.5, 0.5, 1)),
+          horiz_sprite({grid_size, 1}, Color::from_rgba(0.5, 0.5, 0.5, 1))
 { }
 
 void
 View::draw(Sprite_set& set)
 {
-    for (size_t row = 0; row < model_.boardheight; ++row) {
-        for (size_t col = 0; col < model_.boardwidth; ++col) {
+    for (size_t row = 0; row < Board::height; ++row) {
+        for (size_t col = 0; col <Board::width; ++col) {
             switch (model_.board()[row][col].color()) {
             case Enumcolor::black:
                 set.add_sprite(black_sprite,
@@ -99,5 +99,5 @@ View::draw(Sprite_set& set)
 View::Dimensions
 View::window_dimensions() const
 {
-    return {grid_size * model_.boardwidth, grid_size * model_.boardheight};
+    return {grid_size * Board::width, grid_size * Board::height};
 }
