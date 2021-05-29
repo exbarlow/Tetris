@@ -20,8 +20,9 @@ public:
     /// Draws onto the screen
     void draw(ge211::Sprite_set& set);
 
-    Dimensions window_dimensions() const;
+    Dimensions initial_window_dimensions() const;
 
+    void scorestring();
 
 
 private:
@@ -37,5 +38,12 @@ private:
     ge211::Rectangle_sprite const red_sprite;
     ge211::Rectangle_sprite const vert_sprite;
     ge211::Rectangle_sprite const horiz_sprite;
+    ge211::Font const sans72;
+    ge211::Font const sans20;
+    ge211::Font const sans10;
+    ge211::Text_sprite const temp_game_over_sprite;
+    ge211::Text_sprite const score_text_sprite;
+    ge211::Text_sprite score_num_sprite;
+
 
 };

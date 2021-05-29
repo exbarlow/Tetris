@@ -19,7 +19,7 @@ public:
     std::array<std::array<Index, Board::width>, Board::height>
     board() const;
 
-    void shift_down(int num);
+    void shift_down(size_t num);
 
     void add_score(int);
 
@@ -31,6 +31,37 @@ public:
 
     void store();
 
+    std::array<Block,3> up_next() const;
+
+    Block current() const;
+
+    Block stored() const;
+
+    void shift_right();
+
+    void shift_left();
+
+    bool collides_down();
+
+    bool collides_left();
+
+    bool collides_right();
+
+    bool collides_rotate();
+
+    int lowest_occupied(Block block);
+
+    void actual_move();
+
+    void rotate();
+
+    bool game_over() const;
+
+    void clear_line();
+
+    int score() const;
+
+
 
 private:
     std::array<std::array<Index, Board::width>, Board::height> board_;
@@ -40,6 +71,8 @@ private:
     Block current_;
     Block stored_;
     bool can_swap_;
+    bool game_over_;
+    bool collided_;
 
 
 };
