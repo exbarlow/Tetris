@@ -16,14 +16,6 @@ Controller::initial_window_dimensions() const
     return view_.initial_window_dimensions();
 }
 
-void
-Controller::on_mouse_up(ge211::Mouse_button button, ge211::Posn<int> posn)
-{
-    if (button == ge211::Mouse_button::left) {
-
-    }
-}
-
 // Interprets button presses
 void
 Controller::on_key(ge211::Key key)

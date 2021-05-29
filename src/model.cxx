@@ -4,7 +4,7 @@ Model::Model()
         : score_(0),
           can_swap_(true),
           game_over_(false),
-          countdown_(1)
+          countdown_(250)
 {
     for (int row = 0; row < Board::height; ++row) {
         for (int col = 0; col < Board::width; ++col) {
@@ -353,8 +353,8 @@ Model::clear_line()
         if (full) {
             shift_down(row);
             add_score(100);
-            next_to_current();
         }
+
     }
 }
 
@@ -447,7 +447,6 @@ Model::count_down()
             countdown_ = 30;
         }
     }
-
 
 }
 
