@@ -16,13 +16,11 @@ Controller::initial_window_dimensions() const
     return view_.initial_window_dimensions();
 }
 
-void // temporary
+void
 Controller::on_mouse_up(ge211::Mouse_button button, ge211::Posn<int> posn)
 {
     if (button == ge211::Mouse_button::left) {
-        model_.actual_move();
-    } else if (button == ge211::Mouse_button::right) {
-        model_.store();
+
     }
 }
 
@@ -40,8 +38,12 @@ Controller::on_key(ge211::Key key)
             model_.add_score(1);
         } else if (key == ge211::Key::up()) {
             model_.rotate();
+        } else if (key == ge211::Key::code(' ')) {
+            model_.set_current(model_.phantom_block_score());
+            model_.actual_move();
+        } else if (key == ge211::Key::code('c')) {
+            model_.store();
         }
-
     }
 }
 
@@ -50,5 +52,8 @@ Controller::on_frame(double dt)
 {
     model_.clear_line();
     view_.scorestring();
-    //model_.actual_move();
+    model_.update_phantom();
+    model_.count_down();
 }
+
+

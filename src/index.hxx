@@ -19,8 +19,6 @@ public:
 
     void set_occupied();
 
-    void set_unoccupied();
-
     void set_color(Enumcolor enumcolor);
 
     Position posn();

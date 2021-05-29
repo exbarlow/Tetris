@@ -8,10 +8,9 @@ Index::Index(Position position)
         : posn_(position),
           occupied_(false),
           color_(Enumcolor::black)
-{}
+{ }
 
 // Sets posn_ of the index to the provided position
-/// Might not be used
 void
 Index::set_posn(Position position)
 {
@@ -23,13 +22,6 @@ void
 Index::set_occupied()
 {
     occupied_ = true;
-}
-
-// Sets the occupied status of the index to false
-void
-Index::set_unoccupied()
-{
-    occupied_ = false;
 }
 
 // Sets the color of the index to 'color'

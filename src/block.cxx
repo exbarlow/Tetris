@@ -3,7 +3,8 @@
 // Constructor, constructs each block placing them at the top of the board
 // (rounded to the left).
 Block::Block(Enumcolor enumcolor)
-        : center_(0, 0)
+        : center_(0, 0),
+          collided_(false)
 {
     switch (enumcolor) {
     case Enumcolor::black:
@@ -306,6 +307,20 @@ std::vector<Index>
 Block::boundbox() const
 {
     return boundbox_;
+}
+
+// Returns collided_
+bool
+Block::collided()
+{
+    return collided_;
+}
+
+// Sets collided_ to true
+void
+Block::set_collided()
+{
+    collided_ = true;
 }
 
 

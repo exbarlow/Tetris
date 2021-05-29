@@ -41,7 +41,7 @@ public:
 
     void shift_left();
 
-    bool collides_down();
+    bool collides_down(Block block);
 
     bool collides_left();
 
@@ -50,6 +50,8 @@ public:
     bool collides_rotate();
 
     int lowest_occupied(Block block);
+
+    void actual_move(Block& block);
 
     void actual_move();
 
@@ -60,6 +62,18 @@ public:
     void clear_line();
 
     int score() const;
+
+    Block phantom_block_score();
+
+    Block phantom_block_noscore();
+
+    void update_phantom();
+
+    Block phantom() const;
+
+    void set_current(Block block);
+
+    void count_down();
 
 
 
@@ -72,7 +86,7 @@ private:
     Block stored_;
     bool can_swap_;
     bool game_over_;
-    bool collided_;
-
+    Block phantom_;
+    int countdown_;
 
 };

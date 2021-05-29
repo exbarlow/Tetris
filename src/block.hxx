@@ -30,9 +30,14 @@ public:
 
     std::vector<Index> boundbox() const;
 
+    bool collided();
+
+    void set_collided();
+
 private:
 
     std::vector<Index> boundbox_;
     ge211::Posn<double> center_;
     Enumcolor color_;
+    bool collided_;
 };
