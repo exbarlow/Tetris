@@ -39,6 +39,7 @@ Controller::on_key(ge211::Key key)
     }
 }
 
+// Called every frame
 void
 Controller::on_frame(double dt)
 {

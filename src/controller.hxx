@@ -19,7 +19,6 @@ protected:
     void on_frame(double dt) override;
 
 
-
 private:
     Model model_;
     View view_;

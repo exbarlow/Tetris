@@ -1,5 +1,5 @@
 #pragma once
-
+// The different possible colors for the grid and blocks
 enum class Enumcolor
 {
     black,

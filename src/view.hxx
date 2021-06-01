@@ -40,8 +40,6 @@ public:
     void scorestring();
 
 
-
-
 private:
     Model const& model_;
 
@@ -69,7 +67,5 @@ private:
     ge211::Text_sprite const next_text_sprite;
     ge211::Text_sprite const gameover_score_text_sprite;
     ge211::Text_sprite gameover_score_num_sprite;
-
-
 
 };
