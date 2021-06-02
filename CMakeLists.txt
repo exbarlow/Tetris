@@ -1,18 +1,18 @@
 cmake_minimum_required(VERSION 3.3)
 
-# TODO: Change “game” to the name of your game (no spaces!):
+
 set(GAME_EXE tetris)
 
 project(${GAME_EXE} CXX)
 include(.cs211/cmake/CMakeLists.txt)
 
-# TODO: PUT ADDITIONAL MODEL .cxx FILES IN THIS LIST:
+
 set(MODEL_SRC
         src/model.cxx
         src/index.cxx
         src/block.cxx)
 
-# TODO: PUT ADDITIONAL NON-MODEL (UI) .cxx FILES IN THIS LIST:
+
 add_program(${GAME_EXE}
         ${MODEL_SRC}
         src/view.cxx
